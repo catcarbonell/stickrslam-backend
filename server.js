@@ -2,11 +2,13 @@ const express = require('express');
 const connectDB = require('./config/db');
 require('dotenv').config();
 
-console.log(process.env);
 const app = express();
 
 // Connect DB
 connectDB();
+
+// Middleware
+app.use(express.json({ extended: false }));
 
 // Define Routes
 app.use('/api/users', require('./routes/api/users'));
