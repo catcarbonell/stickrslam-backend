@@ -19,14 +19,6 @@ const ProfileSchema = new mongoose.Schema({
     },
     bio: {
         type: String
-    },
-    stickers_owned: {
-        type: mongoose.Schema.Types.stickers_owned,
-        ref: 'user'
-    },
-    stickers_wishlist: {
-        type: mongoose.Schema.Types.stickers_wishlist,
-        ref: 'user'
     }
 });
 
