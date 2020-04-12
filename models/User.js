@@ -15,10 +15,9 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    bio: String,
     avatar: String,
-    stickers_owned: [],
-    stickers_wishlist: [],
+    stickers_owned: [String],
+    stickers_wishlist: [String],
 });
 
 module.exports = User = mongoose.model('user', UserSchema);
