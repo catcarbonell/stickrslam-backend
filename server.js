@@ -4,13 +4,13 @@ require('dotenv').config();
 
 const app = express();
 
-// Connect DB
+// ===== Connect DB ====== //
 connectDB();
 
-// Middleware
+// ===== Middleware ===== //s
 app.use(express.json({ extended: false }));
 
-//  Routes
+//  ===== Routes ===== //
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/stickers', require('./routes/api/stickers'));

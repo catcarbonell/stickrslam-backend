@@ -40,6 +40,7 @@ router.post('/', auth,
         facebook,
         instagram,
     } = req.body;
+
     // Build Profile Object
     const profileFields = {};
     profileFields.user = req.user.id;
@@ -60,10 +61,12 @@ router.post('/', auth,
             );
             return res.json(profile);
         }
-        // Create
-            profile = new Profile(profileFields);
-            await Profile.save();
+            // Create
+            profile =  new Profile(profileFields);
+            await profile.save();
             res.json(profile)
+            console.log('Profile created!')
+
     } catch(err) {
         console.log(err.message);
         res.status(500).send('Server Error');
