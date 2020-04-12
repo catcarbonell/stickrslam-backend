@@ -5,16 +5,16 @@ const ProfileSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
-    fbUrl: {
+    facebook: {
         type: String
     },
-    twitterUrl: {
+    twitter: {
         type: String
     },
-    igUrl: {
+    instagram: {
         type: String
     },
-    websiteUrl: {
+    website: {
         type: String
     },
     bio: {

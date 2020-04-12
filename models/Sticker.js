@@ -5,7 +5,7 @@ const StickerSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
-    imgRef:{
+    imgUrl:{
         type: String
     },
     artistUrl: {
@@ -14,7 +14,7 @@ const StickerSchema = new mongoose.Schema({
     artistName: {
         type: String
     },
-    dateUploaded: {
+    dateAdded: {
         type: Date,
         default: Date.now
     },
