@@ -28,6 +28,7 @@ router.post('/', auth,
     async (req, res) =>{
 
     const {
+        username,
         bio,
         website,
         twitter,
@@ -38,6 +39,7 @@ router.post('/', auth,
     // Build Profile Object
     const profileFields = {};
     profileFields.user = req.user.id;
+    profileFields.username = username;
     if(bio) profileFields.bio = bio;
     if(website) profileFields.website = website;
     if(twitter) profileFields.twitter = twitter;
