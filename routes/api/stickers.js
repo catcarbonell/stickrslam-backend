@@ -12,15 +12,11 @@ router.get('/', (req, res) => res.send('Stickers route'));
 // @access  Private
 router.post('/', auth, 
     async (req, res) => {
-    const errors = validationResult(req);
-    if(!errors.isEmpty()){
-        return res.status(400).json({ errors: errors.array });
-    }
 
     const {
        tags
     } = req.body;
-    // Build Profile Object
+    // Build Sticker Object
     const stickerFields = {};
     if(tags){
         stickerFields.tags = tags.split(',').map(tag => tag.trim()); 

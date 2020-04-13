@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const StickerSchema = new mongoose.Schema({
-    User: {
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
-    imgUrl:{
+    image:{
         type: String
     },
     artistUrl: {
@@ -13,10 +13,6 @@ const StickerSchema = new mongoose.Schema({
     },
     artistName: {
         type: String
-    },
-    dateAdded: {
-        type: Date,
-        default: Date.now
     },
     comments: {
         type: [String]
@@ -27,7 +23,11 @@ const StickerSchema = new mongoose.Schema({
     public: {
         type: Boolean,
         default: true
-    }
+    },
+    dateAdded: {
+        type: Date,
+        default: Date.now
+    },
 });
 
 module.exports = Sticker = mongoose.model('sticker', StickerSchema);
